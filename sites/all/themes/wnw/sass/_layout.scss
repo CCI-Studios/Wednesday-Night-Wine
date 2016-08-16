@@ -1,0 +1,206 @@
+body
+{
+  background: $pink;
+}
+.page-wrapper
+{
+  background: white;
+}
+
+.container
+{
+  max-width: 940px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+
+.header
+{
+  max-width: 1150px;
+  padding: 15px 25px;
+  margin: 0 auto;
+  
+  &:after
+  {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+.header-image .background
+{
+  width: 100%;
+  height: 375px;
+  background: url(../img/header-bg.jpg) no-repeat top center;
+  background-size: cover;
+  
+  @media screen and (max-width: 800px)
+  {
+    height: 0;
+    padding-bottom: 30%;
+  }
+}
+
+.logo
+{
+  float: left;
+  
+  img
+  {
+    display: block;
+    height: 100px;
+    width: auto;
+  }
+}
+
+.region-header
+{
+  float: right;
+}
+.block__main-menu
+{
+  float: left;
+  padding-top: 25px;
+  
+  .content
+  {
+    ul
+    {
+      list-style: none;
+    }
+    li
+    {
+      display: block;
+      float: left;
+    }
+    a
+    {
+      display: block;
+      color: black;
+      font-weight: 300;
+      text-decoration: none;
+      padding: 0 20px;
+      line-height: 50px;
+      text-transform: uppercase;
+      
+      &:hover, &:focus
+      {
+        color: $pink;
+      }
+    }
+  }
+}
+.block__instagram-header
+{
+  float: left;
+  padding-top: 25px;
+  
+  .content a
+  {
+    font-size: 0;
+    text-decoration: none;
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url(../img/instagram-pink.svg) no-repeat center center;
+  }
+}
+
+.footer
+{
+  background: $pink;
+  color: white;
+  clear: both;
+  padding: 50px 25px;
+  text-align: center;
+  font-weight: 400;
+  
+  a
+  {
+    color: white;
+    text-decoration: none;
+    
+    &:hover, &:focus
+    {
+      text-decoration: underline;
+    }
+  }
+}
+.block__footer-contact
+{
+  margin-bottom: 20px;
+  
+  h2
+  {
+    color: black;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    font-weight: 300;
+  }
+  .content
+  {
+    a
+    {
+      font-weight: 700;
+      font-size: 1.1em;
+      line-height: 36px;
+    }
+  }
+}
+.footer-contact--phone
+{
+  padding-left: 22px;
+  background: url(../img/phone-black.svg) no-repeat left center;
+}
+.footer-contact--phone
+{
+  padding-left: 34px;
+  background: url(../img/email-black.svg) no-repeat left center;
+}
+.block__instagram-footer
+{
+  margin: 20px 0;  
+  
+  .content a
+  {
+    font-size: 0;
+    text-decoration: none;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background: url(../img/instagram-black.svg) no-repeat center center;
+  }
+}
+.block__footer-menu
+{
+  margin: 20px 0;
+  
+  .content
+  {
+    ul
+    {
+      list-style: none;
+      text-align: center;
+    }
+    li
+    {
+      list-style: none;
+      display: inline-block;
+    }
+    a
+    {
+      display: block;
+      padding: 0 5px;
+      font-size: 1.1em;
+    }
+  }
+}
+.site-by-cci
+{
+  font-size: 0.85em;
+}
+
+.not-front .main-wrapper
+{
+  padding: 40px 0;
+}
