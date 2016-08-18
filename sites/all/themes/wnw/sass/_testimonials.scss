@@ -10,11 +10,25 @@
     float: left;
     border-radius: 50%;
     margin-right: 30px;
+    
+    @include maxwidth(760px)
+    {
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 10px;
+      display: block;
+    }
   }
   .views-field-body,
   .views-field-title
   {
     margin-left: 202px;
+    
+    @include maxwidth(760px)
+    {
+      margin-left: 0;
+    }
   }
   .views-field-title
   {
@@ -24,6 +38,12 @@
     padding-bottom: 40px;
     border-bottom: 1px solid #fef3f8;
     padding-left: 100px;
+    
+    @include maxwidth(480px)
+    {
+      padding-left: 0;
+      text-align: center;
+    }
   }
   .views-field-body
   {
@@ -31,5 +51,12 @@
     font-style: italic;
     padding-left: 100px;
     background: url(../img/quote.svg) no-repeat left center;
+    
+    @include maxwidth(480px)
+    {
+      padding-left: 0;
+      padding-top: 60px;
+      background-position: top center;
+    }
   }
 }

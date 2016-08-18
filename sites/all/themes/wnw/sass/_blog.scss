@@ -24,6 +24,11 @@
     &:hover .hover
     {
       display: block;
+      
+      @include maxwidth(480px)
+      {
+        display: none;
+      }
     }
     
     a
@@ -183,9 +188,20 @@
 .view-blog .pager-previous
 {
   float: left;
+  
+  @include maxwidth(480px)
+  {
+    float: none;
+    margin-bottom: 15px;
+  }
 }
 .prevnext__next,
 .view-blog .pager-next
 {
   float: right;
+  
+  @include maxwidth(480px)
+  {
+    float: none;
+  }
 }

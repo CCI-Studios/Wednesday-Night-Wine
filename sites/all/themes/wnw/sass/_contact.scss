@@ -8,12 +8,24 @@
     float: left;
     width: 49%;
     margin: 0 0 2% 0;
+    
+    @include maxwidth(480px)
+    {
+      float: none;
+      width: auto;
+      margin: 0 0 1em 0;
+    }
   }
   .webform-component--first-name,
   .webform-component--phone-number
   {
     margin-right: 2%;
     clear: left;
+    
+    @include maxwidth(480px)
+    {
+      margin-right: 0;
+    }
   }
   .webform-component--preferred-method-of-communication
   {

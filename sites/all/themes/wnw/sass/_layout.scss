@@ -20,6 +20,12 @@ body
   padding: 15px 25px;
   margin: 0 auto;
   
+  @include maxwidth(640px)
+  {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
   &:after
   {
     content: "";
@@ -45,22 +51,66 @@ body
 {
   float: left;
   
+  @include maxwidth(960px)
+  {
+    float: none;
+  }
+  @include maxwidth(640px)
+  {
+    padding: 10px 25px;
+  }
+  
   img
   {
     display: block;
     height: 100px;
     width: auto;
+    
+    @include maxwidth(960px)
+    {
+      margin: 0 auto;
+    }
+    @include maxwidth(640px)
+    {
+      height: 80px;
+    }
   }
 }
 
 .region-header
 {
   float: right;
+  
+  @include maxwidth(960px)
+  {
+    float: none;
+  }
 }
 .block__main-menu
 {
   float: left;
   padding-top: 25px;
+  
+  @include maxwidth(960px)
+  {
+    float: none;
+    text-align: center;
+    padding-top: 10px;
+  }
+  @include maxwidth(640px)
+  {
+    display: none;
+    padding-top: 0;
+    position: absolute;
+    top: 110px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-top: 1px solid #fef3f8;
+    border-bottom: 1px solid #fef3f8;
+    z-index: 10000;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.1);
+  }
   
   .content
   {
@@ -70,8 +120,14 @@ body
     }
     li
     {
-      display: block;
-      float: left;
+      display: inline-block;
+      
+      @include maxwidth(640px)
+      {
+        display: block;
+        border-top: 1px solid #fef3f8;
+        border-bottom: 1px solid #fef3f8;
+      }
     }
     a
     {
@@ -86,6 +142,13 @@ body
       &:hover, &:focus
       {
         color: $pink;
+        
+        @include maxwidth(640px)
+        {
+          color: white;
+          background: $pink;
+          font-weight: 400;
+        }
       }
     }
   }
@@ -95,6 +158,16 @@ body
   float: left;
   padding-top: 25px;
   
+  @include maxwidth(960px)
+  {
+    float: none;
+    padding-top: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+  }
+  
   .content a
   {
     font-size: 0;
@@ -102,7 +175,7 @@ body
     display: block;
     width: 50px;
     height: 50px;
-    background: url(../img/instagram-black.svg) no-repeat center center;
+    background: url(../img/instagram-pink.svg) no-repeat center center;
     
     &:after
     {
@@ -110,10 +183,23 @@ body
       position: absolute;
       left: -999999px;
     }
-    &:hover, &:focus, &:after
-    {
-      background-image: url(../img/instagram-pink.svg);
-    }
+  }
+}
+.btn-menu
+{
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  z-index: 1;
+  background: url(../img/menu.svg) no-repeat center center;
+  font-size: 0;
+  
+  @include maxwidth(640px)
+  {
+    display: block;
   }
 }
 

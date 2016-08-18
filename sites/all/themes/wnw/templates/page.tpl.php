@@ -82,6 +82,8 @@
       </a>
 
       <?php print render($page['header']); ?>
+      
+      <a href="#" class="btn-menu">Menu</a>
 
     </div></div></div>
     
