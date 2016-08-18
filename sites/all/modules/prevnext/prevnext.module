@@ -47,7 +47,7 @@ function prevnext_node_view($node, $view_mode, $langcode) {
     $extrafields = field_extra_fields_get_display('node', $node->type, $view_mode);
     $language = NULL;
 
-    if (module_exists(array('i18n_node'))) {
+    if (module_exists('i18n_node')) {
       $mode = variable_get('language_content_type_' . $node->type, 0);
       $language = ($mode != 0) ? $langcode : NULL;
     }
