@@ -7,3 +7,15 @@ body
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
+
+@font-face {
+    font-family: 'jenna_sueregular';
+    src: url('../fonts/jennasue/jennasue-webfont.woff2') format('woff2'),
+         url('../fonts/jennasue/jennasue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@mixin script
+{
+  font-family: 'jenna_sueregular';
+}

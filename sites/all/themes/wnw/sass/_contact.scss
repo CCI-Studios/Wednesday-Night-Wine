@@ -1,0 +1,37 @@
+.webform-client-form-17
+{
+  .webform-component--first-name,
+  .webform-component--phone-number,
+  .webform-component--last-name,
+  .webform-component--email-address
+  {
+    float: left;
+    width: 49%;
+    margin: 0 0 2% 0;
+  }
+  .webform-component--first-name,
+  .webform-component--phone-number
+  {
+    margin-right: 2%;
+    clear: left;
+  }
+  .webform-component--preferred-method-of-communication
+  {
+    color: $pink;
+    text-align: center;
+    
+    label
+    {
+      font-weight: 300;
+      vertical-align: middle;
+    }
+    & > label, .form-item, .form-radios
+    {
+      display: inline-block;
+    }
+    .form-item
+    {
+      margin: 0 0 0 30px;
+    }
+  }
+}

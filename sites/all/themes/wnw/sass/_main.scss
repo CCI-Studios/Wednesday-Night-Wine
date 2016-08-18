@@ -1,3 +1,8 @@
+a
+{
+  color: $pink;
+}
+
 h1
 {
   color: $pink;
@@ -5,9 +10,86 @@ h1
   text-align: center;
   font-size: 2.75em;
   text-transform: uppercase;
+  margin-bottom: 0.4em;
+}
+h2
+{
+  color: $pink;
+  font-weight: 300;
+  font-size: 1.5em;
+  margin-bottom: 0.4em;
 }
 
-p
+hr
 {
-  line-height: 1.35;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #fef3f8;
+  margin-bottom: 1em;
+}
+
+.block-system-main
+{
+  max-width: 940px;
+  padding: 0 25px;
+  margin: 0 auto;
+  
+  h2
+  {
+    font-style: italic;
+  }
+  p
+  {
+    margin-bottom: 1em;
+    line-height: 1.75;
+    font-size: 1.1em;
+  }
+  ul, ol
+  {
+    margin-bottom: 1em;
+    padding-left: 30px;
+    line-height: 1.75;
+    font-size: 1.1em;
+  }
+  ol
+  {
+    li:nth-child(1)
+    {
+      list-style: none;
+      
+      &:before
+      {
+        content: url(../img/1.png);
+        display: inline;
+        margin-right: 12px;
+      }
+    }
+    li:nth-child(2)
+    {
+      list-style: none;
+      
+      &:before
+      {
+        content: url(../img/2.png);
+        display: inline;
+        margin-right: 6px;
+      }
+    }
+    li:nth-child(3)
+    {
+      list-style: none;
+      
+      &:before
+      {
+        content: url(../img/3.png);
+        display: inline;
+        margin-right: 7px;
+      }
+    }
+  }
+}
+
+.pink
+{
+  color: $pink;
 }

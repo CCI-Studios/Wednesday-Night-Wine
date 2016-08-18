@@ -102,7 +102,18 @@ body
     display: block;
     width: 50px;
     height: 50px;
-    background: url(../img/instagram-pink.svg) no-repeat center center;
+    background: url(../img/instagram-black.svg) no-repeat center center;
+    
+    &:after
+    {
+      content: "";
+      position: absolute;
+      left: -999999px;
+    }
+    &:hover, &:focus, &:after
+    {
+      background-image: url(../img/instagram-pink.svg);
+    }
   }
 }
 
