@@ -19,3 +19,8 @@ body
 {
   font-family: 'jenna_sueregular';
 }
+.font-script
+{
+  @include script;
+  font-size: 1.5em;
+}

@@ -47,3 +47,22 @@
     }
   }
 }
+
+
+.webform-confirmation--thank-you
+{
+  text-align: center;
+  padding-bottom: 80px;
+  margin-bottom: 30px;
+  background: url(../img/email-pink.svg) no-repeat center bottom;
+  
+  .black
+  {
+    text-transform: uppercase;
+    font-size: 1.25em;
+  }
+  .font-script
+  {
+    font-size: 2.5em;
+  }
+}
