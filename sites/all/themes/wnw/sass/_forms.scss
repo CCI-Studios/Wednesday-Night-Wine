@@ -53,3 +53,47 @@ textarea
     font-weight: 400;
   }
 }
+
+.form-type-radio
+{
+  input
+  {
+    position: absolute;
+    left: -9999999px;
+  }
+  label
+  {
+    position: relative;
+    padding-left: 25px;
+    
+    &:before
+    {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      border: 1px solid black;
+      position: absolute;
+      left: 0;
+      top: 3px;
+      border-radius: 50%;
+    }
+  }
+  input:checked ~ label:after
+  {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $pink;
+    position: absolute;
+    left: 4px;
+    top: 7px;
+  }
+  input:focus ~ label:before
+  {
+    box-shadow: 0 0 3px 2px #85bffd;
+  }
+  
+}
