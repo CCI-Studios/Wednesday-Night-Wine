@@ -141,7 +141,7 @@ function _prevnext_get_prevnext($node, $language = NULL) {
 
   $nids = array();
   foreach ($result['node'] as $result_nids) {
-    $nids[$result_nids->nid] = $result_nids->nid;
+    $nids[] = $result_nids->nid;
   }
 
   $key = array_search($node->nid, $nids);
