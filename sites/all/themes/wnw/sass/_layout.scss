@@ -244,13 +244,15 @@ body
     }
   }
 }
-.footer-contact--phone
+.footer-contact--phone a
 {
+  display: inline-block;
   padding-left: 22px;
   background: url(../img/phone-black.svg) no-repeat left center;
 }
-.footer-contact--phone
+.footer-contact--email a
 {
+  display: inline-block;
   padding-left: 34px;
   background: url(../img/email-black.svg) no-repeat left center;
 }
