@@ -124,12 +124,14 @@ body
     li
     {
       display: inline-block;
+      margin-left: -4px;
       
       @include maxwidth(640px)
       {
         display: block;
         border-top: 1px solid #fef3f8;
         border-bottom: 1px solid #fef3f8;
+        margin-left: 0;
       }
     }
     a
