@@ -214,12 +214,18 @@
   }
   .page-title
   {
-    background: url(../img/bg-blog.jpg) no-repeat center center;
+    background: url(../img/bg-blog.jpg) no-repeat bottom center;
     background-size: cover;
     background-attachment: fixed;
     padding: 10% 25px;
     color: white;
     text-shadow: 0 0 10px black;
     line-height: 1;
+    
+    @include maxwidth(1024px)
+    {
+      background-attachment: scroll;
+      background-position: center center;
+    }
   }
 }
