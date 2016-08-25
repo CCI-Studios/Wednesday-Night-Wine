@@ -160,6 +160,17 @@
 {
   display: none !important;
 }
+.view-blog .pager
+{
+  margin: 0;
+  padding: 0;
+  
+  li
+  {
+    margin: 0;
+    padding: 0;
+  }
+}
 .view-blog .pager a,
 .prevnext a
 {
@@ -206,15 +217,15 @@
   }
 }
 
-.node-type-blog-post
+
+
+.node-blog-post
 {
-  .main-wrapper
-  {
-    padding-top: 0;
-  }
   .page-title
   {
-    background: url(../img/bg-blog.jpg) no-repeat bottom center;
+    color: white;
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     background-attachment: fixed;
     padding: 10% 25px;
@@ -227,5 +238,23 @@
       background-attachment: scroll;
       background-position: center center;
     }
+  }
+  & > .content
+  {
+    max-width: 940px;
+    padding: 0 25px;
+    margin: 0 auto;
+  }
+}
+.node-type-blog-post
+{
+  .block-system-main
+  {
+    padding: 0;
+    max-width: none;
+  }
+  .main-wrapper
+  {
+    padding-top: 0;
   }
 }

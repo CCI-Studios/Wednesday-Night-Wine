@@ -79,21 +79,22 @@
  *
  * @ingroup themeable
  */
+$header_image_url = file_create_url($content['field_header_image']['#items'][0]['uri']);
+hide($content['field_header_image']);
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
 
   <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-  <?php endif; ?>
+  <h1<?php print $title_attributes; ?> class="page-title" style="background-image:url('<?php print $header_image_url;?>');"><?php print $title; ?></h1>
   <?php print render($title_suffix); ?>
 
-  <div class="submitted">
-    <p><?php print_r(date("F j, Y", $node->created)); ?></p>
-  </div>
+  
 
   <div class="content"<?php print $content_attributes; ?>>
+    <div class="submitted">
+      <p><?php print_r(date("F j, Y", $node->created)); ?></p>
+    </div>
     <?php
       // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
