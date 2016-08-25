@@ -181,6 +181,7 @@
   font-size: 1.1em;
   text-align: center;
   height: 60px;
+  width: 160px;
   line-height: 60px;
   padding: 0 28px;
   border: 1px solid $pink;
@@ -199,8 +200,9 @@
 .view-blog .pager-previous
 {
   float: left;
+  text-align: center;
   
-  @include maxwidth(480px)
+  @include maxwidth(540px)
   {
     float: none;
     margin-bottom: 15px;
@@ -210,8 +212,9 @@
 .view-blog .pager-next
 {
   float: right;
+  text-align: center;
   
-  @include maxwidth(480px)
+  @include maxwidth(540px)
   {
     float: none;
   }
