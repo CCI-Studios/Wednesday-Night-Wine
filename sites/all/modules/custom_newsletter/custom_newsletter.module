@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implements hook_libraries_info().
+ */
+function custom_newsletter_libraries_info() {
+  $libraries['mailchimp'] = array(
+    'name' => 'MailChimp API',
+    'vendor url' => 'https://github.com/thinkshout/mailchimp-api-php',
+    'download url' => 'https://github.com/thinkshout/mailchimp-api-php/archive/v1.0.3.zip',
+    'version arguments' => array(
+      'file' => 'composer.json',
+      'pattern' => '/"version": "([0-9a-zA-Z.-]+)"/',
+    ),
+    'files' => array(
+      'php' => array(
+        'src/Mailchimp.php',
+        'src/MailchimpAPIException',
+        'src/MailchimpCampaigns.php',
+        'src/MailchimpLists.php',
+        'src/MailchimpReports.php',
+        'src/MailchimpTemplates.php',
+        'vendor/autoload.php',
+      ),
+    ),
+  );
+
+  return $libraries;
+}
+
+function custom_newsletter_webform_submission_insert($node, $submission) {
+  if ($node->nid == 7) {
+    global $conf;
+    $mapping = _custom_newsletter_webform_component_mapping($node);
+    $name = $submission->data[$mapping['name']][0];
+    $email = $submission->data[$mapping['email']][0];
+    
+    //subscribe to list in mailchimp
+    if (($library = libraries_load('mailchimp')) && !empty($library['loaded'])) {
+      $mc = new \Mailchimp\MailchimpLists($conf['MAILCHIMP_API_KEY']);
+      $list_id = 'ea97cae8bc';
+      try {
+        $mc->addMember($list_id, $email, array('status'=>'subscribed', 'FNAME'=>$name));
+      } catch (Exception $e) {
+      }
+    }
+  }
+}
+
+function _custom_newsletter_webform_component_mapping($node) {
+  $mapping = array();
+  $components = $node->webform['components'];
+  foreach ($components as $i => $component) {
+    $key = $component['form_key'];
+    $mapping[$key] = $i;
+  }
+  return $mapping;
+}
