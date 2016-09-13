@@ -133,7 +133,18 @@ DirectoryIndex index.php index.html index.htm
     RewriteRule \.css\.gz$ - [T=text/css,E=no-gzip:1]
     RewriteRule \.js\.gz$ - [T=text/javascript,E=no-gzip:1]
 
-    <FilesMatch "(\.js\.gz|\.css\.gz)$">
+    <FilesMatch "(\.js\.gz)$">
+      # Serve correct content type.
+      Header set Content-Type text/javascript
+      # Serve correct encoding type.
+      Header set Content-Encoding gzip
+      # Force proxies to cache gzipped & non-gzipped css/js files separately.
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+
+    <FilesMatch "(\.css\.gz)$">
+      # Serve correct content type.
+      Header set Content-Type text/css
       # Serve correct encoding type.
       Header set Content-Encoding gzip
       # Force proxies to cache gzipped & non-gzipped css/js files separately.
@@ -147,3 +158,6 @@ DirectoryIndex index.php index.html index.htm
   # Disable content sniffing, since it's an attack vector.
   Header always set X-Content-Type-Options nosniff
 </IfModule>
+
+AddType application/x-gzip .gz .tgz
+AddEncoding x-gzip .gz .tgz
