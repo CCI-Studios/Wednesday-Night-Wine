@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Wednesday Night Wine feature.
+ */
+
+include_once 'wednesday_night_wine.features.inc';
